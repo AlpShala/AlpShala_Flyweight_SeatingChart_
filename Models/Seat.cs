@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlpShala_SeatingChart.Models
 {
-    public class Seat
+    public class Seat                               //Represents a single seat in the seating chart (flyweight object)
     {
         private readonly SeatType _seatType;
         public int Row { get; }
@@ -21,7 +21,7 @@ namespace AlpShala_SeatingChart.Models
             IsSelected = false;
         }
 
-        public void Display()
+        public void Display()                       //Method for displaying the seat in the console
         {
             Console.SetCursorPosition(Column * 2, Row);
             Console.Write(IsSelected ? 'U' : _seatType.Symbol);

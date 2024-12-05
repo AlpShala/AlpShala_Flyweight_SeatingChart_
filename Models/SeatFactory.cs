@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AlpShala_SeatingChart.Models
+namespace AlpShala_SeatingChart.Models                                 //Creates and manages seattype instances
 {
     public class SeatFactory
     {
         private readonly Dictionary<string, SeatType> _seatTypes = new();
 
-        public SeatType GetSeatType(string name, char symbol)
+        public SeatType GetSeatType(string name, char symbol)            //Checks if a seat type exists and either creates it or stores it
         {
             if (!_seatTypes.ContainsKey(name))
             {

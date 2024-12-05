@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AlpShala_SeatingChart.Models
 {
-    public class SeatType
+    public class SeatType                               //Seat type class that's here to determine the type of seat
     {
         public string Name { get; }
         public char Symbol { get; }
 
-        public SeatType(string name, char symbol)
+        public SeatType(string name, char symbol)       //Constructor for initialisting SeatType
         {
             Name = name;
             Symbol = symbol;
