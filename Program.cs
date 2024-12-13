@@ -11,17 +11,17 @@ namespace SeatingChart
             SeatFactory seatFactory = new SeatFactory();
             List<Seat> seats = new List<Seat>();
 
-            // Define seat types
+                                                                                                // Define seat types
             SeatType regular = seatFactory.GetSeatType("Regular", 'R');
             SeatType premium = seatFactory.GetSeatType("Premium", 'P');
             SeatType accessible = seatFactory.GetSeatType("Accessible", 'A');
 
-            // Seating chart (10 rows, 10 columns)
+                                                                                                // Seating chart (10 rows, 10 columns)
             for (int row = 0; row < 10; row++)
             {
                 for (int col = 0; col < 10; col++)
                 {
-                    // Assigning the seat types
+                                                                                                // Assigning the seat types
                     SeatType seatType = row < 2 ? premium :
                                         col == 0 || col == 9 ? accessible :
                                         regular;
@@ -30,8 +30,8 @@ namespace SeatingChart
                 }
             }
 
-            // Display seating chart and allow user interaction
-            while (true)
+                                                                                                 
+            while (true)                                                                        // Display seating chart and allow user interaction
             {
                 DisplayChart(seats);
                 Console.SetCursorPosition(0, 12);
@@ -44,7 +44,7 @@ namespace SeatingChart
                     break;
                 }
 
-                if (TryParseInput(input, out int row, out int col))
+                if (TryParseInput(input, out int row, out int col))                                 //Confirms if the user has a correct input or informs them they've made a mistake
                 {
                     Seat selectedSeat = seats.Find(s => s.Row == row && s.Column == col);
                     if (selectedSeat != null)
@@ -64,7 +64,7 @@ namespace SeatingChart
             }
         }
 
-        private static void DisplayChart(List<Seat> seats)
+        private static void DisplayChart(List<Seat> seats)                                   //Method for displaying the actual seating chart itself        
         {
             Console.Clear();
             Console.WriteLine("Seating Chart:");
@@ -74,7 +74,7 @@ namespace SeatingChart
             }
         }
 
-        private static bool TryParseInput(string input, out int row, out int col)
+        private static bool TryParseInput(string input, out int row, out int col)           //Method for parsing user's input and checking if it's correct
         {
             row = -1;
             col = -1;
